@@ -24,6 +24,9 @@ public class Administrador implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long IdAdministrador;
     
+    private String UsuarioAdmin;
+    private String SenhaAdmin;
+    
     @ManyToOne
     private Funcionario Funcionario;
 
@@ -42,6 +45,24 @@ public class Administrador implements Serializable {
     public void setFuncionario(Funcionario Funcionario) {
         this.Funcionario = Funcionario;
     }
+
+    public String getUsuarioAdmin() {
+        return UsuarioAdmin;
+    }
+
+    public void setUsuarioAdmin(String UsuarioAdmin) {
+        this.UsuarioAdmin = UsuarioAdmin;
+    }
+
+    public String getSenhaAdmin() {
+        return SenhaAdmin;
+    }
+
+    public void setSenhaAdmin(String SenhaAdmin) {
+        this.SenhaAdmin = SenhaAdmin;
+    }
+    
+    
     
     
 }
