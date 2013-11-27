@@ -7,6 +7,7 @@
 package DataAcess;
 
 import DomainModel.Funcao;
+import DomainModel.IFuncaoRepositorio;
 import java.util.HashMap;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -63,7 +64,7 @@ public class FuncaoDAO
             query.setParameter(par, parametros.get(par));
         }
 
-        --
+        
         return query.getResultList();
 
     }
