@@ -47,16 +47,16 @@ public class FuncionarioDAO
                 if (filtro.length() > 0) {
                     filtro += " and ";
                 }
-                filtro += " f.login=:login ";
-                parametros.put("login", obj.getLogin());
+                filtro += " f.usuario=:usuario ";
+                parametros.put("usuario", obj.getLogin());
             }
 
             if (obj.getIdFuncionario()!= null && obj.getIdFuncionario()> 0) {
                 if (filtro.length() > 0) {
                     filtro = filtro + " and ";
                 }
-                filtro += " f.id =:id";
-                parametros.put("id", obj.getIdFuncionario());
+                filtro += " f.idfuncionario =:idfuncionario";
+                parametros.put("idfuncionario", obj.getIdFuncionario());
             }
 
             if (obj.getSenha() != null && obj.getSenha().length() > 0) {
@@ -94,13 +94,13 @@ public class FuncionarioDAO
     }
     
     @Override
-    public Funcionario fazerLogin(String login){
-        String consulta = "select f from Funcionario f where f.login=:login";
+    public Funcionario fazerLogin(String usuario){
+        String consulta = "select f from Funcionario f where f.usuario=:usuario";
                 // Cria a consulta no JPA
         Query query = manager.createQuery(consulta);
 
         // Aplica os parâmetros da consulta
-        query.setParameter("login", login);
+        query.setParameter("usuario", usuario);
 
         // Executa a consulta
         return (Funcionario)query.getSingleResult();
